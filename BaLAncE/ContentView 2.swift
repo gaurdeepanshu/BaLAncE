@@ -7,187 +7,241 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView2: View {
     var body: some View{
-        Text("BALANCE")
-            .font(.system(size: 25))
-            .bold()
-        VStack(alignment: .leading){
-          HStack(alignment: .top){
-                Circle()
-                    .foregroundColor(Color .blue )
-                    .frame(height: 80)
-                    .opacity(0.2)
-                VStack(alignment: .leading){
-                    Text("user name")
+        NavigationStack{
+            Text("BALANCE")
+                .font(.system(size: 30))
+                .bold()
+            Spacer()
+            VStack{
+                HStack{
+                    Text("Today")
+                        .font(.system(size: 20))
                         .bold()
-                       // .font(.system(size: 25))
-                    Text("User@email.com")
+                    Spacer()
+                    NavigationLink{
+                        ContentView()
+                    } label: {
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }.foregroundColor(.black)
+              }
+                .padding()
+                VStack{
+                    HStack{
+                        Text("Track your habits and stay consistent")
+                        Spacer()
+                    }
+                    .padding()
+                }
+           }
+         List{
+             ZStack{
+                 Rectangle()
+                     .frame(height: 40)
+                     .foregroundColor(Color .black.opacity(0.1))
+                     .cornerRadius(11)
+                 HStack{
+                     Image(systemName: "magnifyingglass")
+                         .resizable()
+                         .frame(width: 20 , height: 20)
+                         .foregroundColor(Color .black )
+                    Text("Search")
+                     Spacer()
+                     Image(systemName: "ellipsis")
+                   }.padding()
+             }
+            
+                 VStack{
+                     HStack{
+                         Image(systemName: "dumbbell.fill")
+                             .resizable()
+                             .frame(width: 20 , height: 10)
+                             .foregroundColor(Color .orange )
+                             .padding()
+                         
+                         VStack(alignment: .leading){
+                             Text("Exclusive workout")
+                             ProgressView(value: 5.0, total: 10.0)
+                                 .tint(Color.orange)
+                          }
+                   
+                      Text("30mins")
+                     }
+                 }
+           
+             VStack{
+                 HStack{
+                     Image(systemName: "figure.walk")
+                         .resizable()
+                         .frame(width: 15 , height: 20)
+                         .foregroundColor(Color .gray )
+                         .padding()
+                     VStack(alignment: .leading){
+                         Text("Walk (10k Steps)")
+                         HStack(alignment: .bottom){
+                             Image(systemName: "figure.walk")
+                                 .resizable()
+                                 .frame(width: 15 , height: 20)
+                                 .foregroundColor(Color .black )
+                             Image(systemName: "figure.walk")
+                                 .resizable()
+                                 .frame(width: 14 , height: 19)
+                                 .foregroundColor(Color .black )
+                             Image(systemName: "figure.walk")
+                                 .resizable()
+                                 .frame(width: 13 , height: 18)
+                                 .foregroundColor(Color .black )
+                             Image(systemName: "figure.walk")
+                                 .resizable()
+                                 .frame(width: 12 , height: 17)
+                                 .foregroundColor(Color .gray)
+                             Image(systemName: "figure.walk")
+                                 .resizable()
+                                 .frame(width: 13 , height: 18)
+                                 .foregroundColor(Color .gray )
+                             Image(systemName: "figure.walk")
+                                 .resizable()
+                                 .frame(width: 14 , height: 19)
+                                 .foregroundColor(Color .gray )
+                             Image(systemName: "figure.walk")
+                                 .resizable()
+                                 .frame(width: 15 , height: 20)
+                                 .foregroundColor(Color .gray,)
+                         }
+                     }
+                     Spacer()
+                   Text("3217 steps")
+                 }
+             }
+             VStack{
+                 HStack{
+                     Image(systemName: "drop.fill")
+                         .resizable()
+                         .frame(width: 15 , height: 20)
+                         .foregroundColor(Color .blue )
+                         .padding()
+                     
+                     VStack(alignment: .leading){
+                         Text("Water Intake (5L)")
+                         HStack(alignment: .bottom){
+                             Image(systemName: "drop.fill")
+                                 .resizable()
+                                 .frame(width: 12 , height: 17)
+                                 .foregroundColor(Color .blue )
+                             Image(systemName: "drop.fill")
+                                 .resizable()
+                                 .frame(width: 12 , height: 17)
+                                 .foregroundColor(Color .blue )
+                             Image(systemName: "drop.fill")
+                                 .resizable()
+                                 .frame(width: 12 , height: 17)
+                                 .foregroundColor(Color .blue )
+                             Image(systemName: "drop.fill")
+                                 .resizable()
+                                 .frame(width: 12 , height: 17)
+                                 .foregroundColor(Color .gray)
+                             Image(systemName: "drop.fill")
+                                 .resizable()
+                                 .frame(width: 12 , height: 17)
+                                 .foregroundColor(Color .gray )
+                         }
+                     }
+                     Spacer()
+                  Text("3L")
+                 }
+             }
+             VStack{
+                 HStack{
+                     Image(systemName: "moon.fill")
+                         .resizable()
+                         .frame(width: 20 , height: 20)
+                         .foregroundColor(Color .yellow )
+                         .padding()
+                      VStack(alignment: .leading){
+                         Text("Sleep (8 hours)")
+                         ProgressView(value: 5.0, total: 10.0)
+                             .tint(Color.yellow)
+                     }
+                     Spacer()
+                  Text("4 hours")
+                 }
+             }
+             VStack{
+                 HStack{
+                     Image(systemName: "figure.outdoor.cycle")
+                         .resizable()
+                         .frame(width: 20 , height: 20)
+                         .foregroundColor(Color .green )
+                         .padding()
+                      VStack(alignment: .leading){
+                         Text(" cycling (5km)")
+                         ProgressView(value: 5.0, total: 10.0)
+                             .tint(Color.green)
+                     }
+                     Spacer()
+                  Text(" 2.5 km")
+                 }
+             }
+             VStack{
+                 HStack{
+                     Image(systemName: "book.fill")
+                         .resizable()
+                         .frame(width: 20 , height: 20)
+                         .foregroundColor(Color.purple)
+                         .padding()
+                     VStack(alignment: .leading){
+                         Text(" Read (2 hours)")
+                         ProgressView(value: 5.0, total: 10.0)
+                             .tint(Color.purple)
+                     }
+                     Spacer()
+                  Text(" 1 hours")
+                 }
+             }
+              }
+           HStack{
+                Spacer()
+                VStack {
+                    Image(systemName: "house.fill")
+                        .resizable()
+                        .frame(width: 30 , height: 30)
+                        .foregroundColor(Color .black )
+                    Text("Home")
+                        .font(.system(size: 15))
+                        .bold()
+                }
+                Spacer()
+               NavigationLink{
+                   ContentView4()
+               } label: {
+                   VStack {
+                        Image(systemName: "heart.fill")
+                            .resizable()
+                            .frame(width: 30 , height: 30)
+                            .foregroundColor(Color .red )
+                        Text("status")
+                            .font(.system(size: 15))
+                            .bold()
+                    }
                }
                 Spacer()
-            }
-            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)   )
-            Spacer()
-            List{
-                VStack{
-                    HStack{
-                          Text("Habit Status")
-                        Spacer()
-                        Image(systemName: "flame.fill")
-                        
-                        Text("Day streak")
-                    }
+                VStack {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .frame(width: 30 , height: 30)
+                        .foregroundColor(Color .brown )
+                    Text("search")
+                        .font(.system(size: 15))
+                        .bold()
                 }
-                VStack{
-                    HStack{
-                        Image(systemName: "dumbbell")
-                        VStack(alignment: .leading){
-                            Text("Exclusive workout")
-                            Text("5 / 5")
-                        }
-                        Spacer()
-                        Image(systemName: "flame.fill")
-                        
-                        Text("Day streak")
-                    }
-                }
-                VStack{
-                    HStack{
-                        Image(systemName: "figure.walk")
-                        VStack(alignment: .leading){
-                            Text("Walk")
-                            Text("5 / 5")
-                        }
-                        Spacer()
-                        Image(systemName: "flame.fill")
-                        
-                        Text("Day streak")
-                    }
-                }
-                VStack{
-                    HStack{
-                        Image(systemName: "figure.run")
-                        VStack(alignment: .leading){
-                            Text("Running")
-                            Text("5 / 5")
-                        }
-                        Spacer()
-                        Image(systemName: "flame.fill")
-                        
-                        Text("Day streak")
-                    }
-                }
-                VStack{
-                    HStack{
-                        Image(systemName: "figure.outdoor.cycle")
-                        VStack(alignment: .leading){
-                            Text("Cycling")
-                            Text("5 / 5")
-                        }
-                        Spacer()
-                        Image(systemName: "flame.fill")
-                        
-                        Text("Day streak")
-                    }
-                }
-                VStack{
-                    HStack{
-                        Image(systemName: "moon")
-                        VStack(alignment: .leading){
-                            Text("Sleep")
-                            Text("5 / 5")
-                        }
-                        Spacer()
-                        Image(systemName: "flame.fill")
-                        
-                        Text("Day streak")
-                    }
-                }
-                VStack{
-                    HStack{
-                        Image(systemName: "drop.fill")
-                        VStack(alignment: .leading){
-                            Text("Water")
-                            Text("5 / 5")
-                        }
-                        Spacer()
-                        Image(systemName: "flame.fill")
-                        
-                        Text("Day streak")
-                    }
-                }
-                ZStack{
-                    Rectangle()
-                        .frame(height: 40)
-                        .opacity(0.3)
-                        .cornerRadius(8)
-                    HStack {
-                        Spacer()
-                        Text("manage habbits")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .resizable( )
-                            .scaledToFit( )
-                            .frame(width: 20 , height: 20)
-                    }
-               }
-                
-                ZStack{
-                    Rectangle()
-                        .frame(height: 40)
-                        .opacity(0.3)
-                        .cornerRadius(8)
-                    HStack {
-                        Spacer()
-                        Text("reminders")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .resizable( )
-                            .scaledToFit( )
-                            .frame(width: 20 , height: 20)
-                    }
-               }
-                 }
-         }
-        
-        HStack{
-            Spacer()
-            VStack {
-                Image(systemName: "house")
-                    .resizable()
-                    .frame(width: 30 , height: 30)
-                    .foregroundColor(Color .black )
-                Text("Home")
-                    .font(.system(size: 15))
-                    .bold()
-            }
-            
-            Spacer()
-            
-            VStack {
-                Image(systemName: "heart")
-                    .resizable()
-                    .frame(width: 30 , height: 30)
-                    .foregroundColor(Color .black )
-                Text("status")
-                    .font(.system(size: 15))
-                    .bold()
-            }
-            Spacer()
-            
-            VStack {
-                Image(systemName: "person")
-                    .resizable()
-                    .frame(width: 30 , height: 30)
-                    .foregroundColor(Color .black )
-                Text("profile")
-                    .font(.system(size: 15))
-                    .bold()
-            }
-            Spacer()
-       }
+                Spacer()
+           }
+        }.toolbar(.hidden)
     }
 }
 #Preview {
-    ContentView()
+    ContentView2()
 }
