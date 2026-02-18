@@ -20,13 +20,13 @@ struct ContentView2: View {
                         .font(.system(size: 20))
                         .bold()
                     Spacer()
-                    NavigationLink{
-                        ContentView()
-                    } label: {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                    }.foregroundColor(.black)
+                   // NavigationLink{
+                  //      ContentView()
+//                    } label: {
+//                        Image(systemName: "person.fill")
+//                            .resizable()
+//                            .frame(width: 20, height: 20)
+//                    }.foregroundColor(.black)
               }
                 .padding()
                 VStack{
@@ -214,9 +214,7 @@ struct ContentView2: View {
                         .bold()
                 }
                 Spacer()
-               NavigationLink{
-                   ContentView4()
-               } label: {
+             
                    VStack {
                         Image(systemName: "heart.fill")
                             .resizable()
@@ -226,7 +224,7 @@ struct ContentView2: View {
                             .font(.system(size: 15))
                             .bold()
                     }
-               }
+               
                 Spacer()
                 VStack {
                     Image(systemName: "magnifyingglass")
@@ -239,7 +237,7 @@ struct ContentView2: View {
                 }
                 Spacer()
            }
-        }.toolbar(.hidden)
+       }.toolbar(.hidden)
     }
 }
 #Preview {

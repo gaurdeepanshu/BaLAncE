@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct ContentView10: View {
+struct ContentView11: View {
     @State private var email = ""
     @State private var password = ""
     var body: some View{
@@ -14,13 +14,12 @@ struct ContentView10: View {
                 Text("BaLAncE")
                     .font(.largeTitle)
                     .foregroundColor(.black)
-                Text("Sign In")
+                Text("Sign Up")
                     .font(.title)
                     .foregroundColor(.orange)
-             
-
-                VStack(alignment: .leading, spacing: 8){
-                    Text("Email address")
+                 
+                 VStack(alignment: .leading, spacing: 8){
+                    Text("Enter Email / Phone")
                         .foregroundColor(.gray)
                     TextField("Email address", text: $email)
                     .frame(height: 10)
@@ -28,7 +27,7 @@ struct ContentView10: View {
                     .background(Color.white)
                     .cornerRadius(50)
                     
-                    Text("Password")
+                    Text("Enter Password")
                         .foregroundColor(.gray)
                     SecureField("Password", text: $password)
                         .frame(height: 10)
@@ -36,17 +35,22 @@ struct ContentView10: View {
                         .background(Color.white)
                         .cornerRadius(50)
                     
-                    Text("Forgot your password?")
-                      .foregroundColor(.blue)
-                      .padding(.top, 1)
-                      .font(.caption)
-                      .fontWeight(.light)
+                    Text("Re-Enter Password")
+                        .foregroundColor(.gray)
+                    
+                    
+                    SecureField("Password", text: $password)
+                        .frame(height: 10)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(50)
+                    
                 }.padding(.horizontal, 50)
                     
                 Button(action: {
                     print("login tapped")
                 }) {
-                    Text("Sign In")
+                    Text("Sign Up")
                         .font(.footnote)
                         .bold()
                         .foregroundStyle(Color.white)
@@ -59,21 +63,6 @@ struct ContentView10: View {
                     .padding(.top, 8)
               
                    
-                HStack{
-                    Image(systemName: "person.crop.circle")
-                        .font(.system(size: 25))
-                        .foregroundColor(.gray)
-                    Text("Don't have an account?")
-                        .foregroundColor(.gray)
-                    Button(action: {
-                        print("sign up tapped")
-                    }) {
-                        Text("Sign Up")
-                    }
-                }
-                
-                Text("sign in using")
-                    .foregroundStyle(Color.gray)
                 HStack(spacing: 20){
                     Image(systemName: "applelogo")
                         .resizable()
@@ -97,5 +86,5 @@ struct ContentView10: View {
          }
 }
 #Preview {
-    ContentView10()
+    ContentView11()
 }

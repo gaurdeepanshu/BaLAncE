@@ -11,11 +11,9 @@ struct ContentView: View {
     var body: some View{
         NavigationStack{
             HStack {
-                NavigationLink{
-                    ContentView2()
-                } label: {
+             
                     Image(systemName: "chevron.left")
-                }.foregroundColor(.black)
+              
                 Spacer()
                 Text("BALANCE")
                     .font(.system(size: 25))

@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct ContentView12: View {
+struct ContentView13: View {
     @State private var email = ""
     @State private var password = ""
     var body: some View{
@@ -81,5 +81,5 @@ struct ContentView12: View {
          }
 }
 #Preview {
-    ContentView12()
+    ContentView13()
 }

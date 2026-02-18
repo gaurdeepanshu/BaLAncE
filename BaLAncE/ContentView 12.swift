@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct ContentView11: View {
+struct ContentView12: View {
     @State private var email = ""
     @State private var password = ""
     var body: some View{
@@ -14,43 +14,40 @@ struct ContentView11: View {
                 Text("BaLAncE")
                     .font(.largeTitle)
                     .foregroundColor(.black)
-                Text("Sign Up")
-                    .font(.title)
-                    .foregroundColor(.orange)
+                Text("Forget Password")
                  
+                    .foregroundColor(.orange)
                  VStack(alignment: .leading, spacing: 8){
-                    Text("Enter Email / Phone")
-                        .foregroundColor(.gray)
-                    TextField("Email address", text: $email)
-                    .frame(height: 10)
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(50)
-                    
-                    Text("Enter Password")
-                        .foregroundColor(.gray)
-                    SecureField("Password", text: $password)
-                        .frame(height: 10)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(50)
-                    
-                    Text("Re-Enter Password")
-                        .foregroundColor(.gray)
-                    
-                    
-                    SecureField("Password", text: $password)
-                        .frame(height: 10)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(50)
-                    
-                }.padding(.horizontal, 50)
-                    
-                Button(action: {
+                     Text("Enter Email / Phone")
+                         .foregroundColor(.gray)
+                     TextField("Email address", text: $email)
+                         .frame(height: 10)
+                         .padding()
+                         .background(Color.white)
+                         .cornerRadius(50)
+                     
+                     Text("Enter OTP")
+                         .foregroundColor(.gray)
+                     SecureField("Password", text: $password)
+                         .frame(height: 10)
+                         .padding()
+                         .background(Color.white)
+                         .cornerRadius(50)
+                     
+                     Text("Enter New Password")
+                         .foregroundColor(.gray)
+                     SecureField("Password", text: $password)
+                         .frame(height: 10)
+                         .padding()
+                         .background(Color.white)
+                         .cornerRadius(50)
+                 }.padding(.horizontal, 50)
+                 Button(action: {
                     print("login tapped")
-                }) {
-                    Text("Sign Up")
+                }
+                 )
+                 {
+                    Text("Sign In")
                         .font(.footnote)
                         .bold()
                         .foregroundStyle(Color.white)
@@ -61,9 +58,7 @@ struct ContentView11: View {
                 }.buttonStyle(PlainButtonStyle())
                     .padding(.horizontal, 50)
                     .padding(.top, 8)
-              
-                   
-                HStack(spacing: 20){
+               HStack(spacing: 20){
                     Image(systemName: "applelogo")
                         .resizable()
                         .scaledToFit()
@@ -79,12 +74,12 @@ struct ContentView11: View {
                         .scaledToFit()
                         .frame(width: 22, height: 32)
                         .foregroundStyle(.primary)
-                }
+               }
             }
         }.ignoresSafeArea()
     }.toolbar(.hidden)
          }
 }
 #Preview {
-    ContentView11()
+    ContentView12()
 }

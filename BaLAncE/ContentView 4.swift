@@ -15,6 +15,8 @@ struct ContentView4: View {
                     
                     Spacer()
                     Text("Status")
+                    Image (systemName: "heart.fill")
+                        .foregroundStyle(Color.red)
                         .bold()
                         
                     Spacer()
@@ -81,98 +83,115 @@ struct ContentView4: View {
                         }
                     }
                 }
-                VStack{
-                    HStack{
-                        Image(systemName: "figure.walk")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(Color .gray )
-                            .padding()
-                        
-                        VStack(alignment: .leading){
-                            Text("walk for 30min's")
-                            ProgressView(value: 5.0, total: 10.0)
-                                .tint(Color.black)
-                         }
-                  
-                     Text("210 mins")
+                NavigationLink{
+                    ContentView5()
+                }label: {
+                    VStack{
+                        HStack{
+                            Image(systemName: "figure.walk")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(Color .gray )
+                                .padding()
+                            
+                            VStack(alignment: .leading){
+                                Text("walk for 30min's")
+                                ProgressView(value: 5.0, total: 10.0)
+                                    .tint(Color.black)
+                             }
+                      
+                         Text("210 mins")
+                        }
                     }
                 }
-                VStack{
-                    HStack{
-                        Image(systemName: "drop.fill")
-                            .resizable()
-                            .frame(width: 14 , height: 15)
-                            .foregroundColor(Color .blue )
-                            .padding()
-                        
-                        VStack(alignment: .leading){
-                            Text("drink water")
-                            ProgressView(value: 5.0, total: 10.0)
-                                .tint(Color.blue)
-                         }
-                  
-                     Text("35L")
+                NavigationLink{
+                    ContentView7()
+                }label: {
+                    VStack{
+                        HStack{
+                            Image(systemName: "drop.fill")
+                                .resizable()
+                                .frame(width: 14 , height: 15)
+                                .foregroundColor(Color .blue )
+                                .padding()
+                            
+                            VStack(alignment: .leading){
+                                Text("Water Intake(5L)")
+                                ProgressView(value: 5.0, total: 10.0)
+                                    .tint(Color.blue)
+                            }
+                            
+                            Text("35L")
+                        }
                     }
                 }
-                VStack{
-                    HStack{
-                        Image(systemName: "moon.fill")
-                            .resizable()
-                            .frame(width: 20 , height: 20)
-                            .foregroundColor(Color .yellow )
-                            .padding()
-                        
-                        VStack(alignment: .leading){
-                            Text("Sleep by 11 PM")
-                            ProgressView(value: 10.0, total: 10.0)
-                                .tint(Color.yellow)
-                         }
-                  
-                     Text("56 HOURS")
+                NavigationLink{
+                    ContentView8()
+                }label: {
+                    VStack{
+                        HStack{
+                            Image(systemName: "moon.fill")
+                                .resizable()
+                                .frame(width: 20 , height: 20)
+                                .foregroundColor(Color .yellow )
+                                .padding()
+                            
+                            VStack(alignment: .leading){
+                                Text("Sleep by 11 PM")
+                                ProgressView(value: 10.0, total: 10.0)
+                                    .tint(Color.yellow)
+                            }
+                            
+                            Text("56 HOURS")
+                        }
                     }
                 }
-                VStack{
-                    HStack{
-                        Image(systemName: "figure.outdoor.cycle")
-                            .resizable()
-                            .frame(width: 20 , height: 20)
-                            .foregroundColor(Color .green )
-                            .padding()
-                        
-                        VStack(alignment: .leading){
-                            Text("Cycling")
-                            ProgressView(value: 5.0, total: 10.0)
-                                .tint(Color.green)
-                         }
-                  
-                     Text("210 mins")
+                NavigationLink{
+                    ContentView6()
+                }label: {
+                    VStack{
+                        HStack{
+                            Image(systemName: "figure.outdoor.cycle")
+                                .resizable()
+                                .frame(width: 20 , height: 20)
+                                .foregroundColor(Color .green )
+                                .padding()
+                            
+                            VStack(alignment: .leading){
+                                Text("Cycling")
+                                ProgressView(value: 5.0, total: 10.0)
+                                    .tint(Color.green)
+                            }
+                            
+                            Text("210 mins")
+                        }
                     }
                 }
-                VStack{
-                    HStack{
-                        Image(systemName: "book.fill")
-                            .resizable()
-                            .frame(width: 20 , height: 20)
-                            .foregroundColor(Color .purple )
-                            .padding()
-                        
-                        VStack(alignment: .leading){
-                            Text("Read for 2 Hours")
-                            ProgressView(value: 5.0, total: 10.0)
-                                .tint(Color.purple)
-                         }
-                  
-                     Text("14 Hours")
+                NavigationLink{
+                    ContentView9()
+                }label: {
+                    VStack{
+                        HStack{
+                            Image(systemName: "book.fill")
+                                .resizable()
+                                .frame(width: 20 , height: 20)
+                                .foregroundColor(Color .purple )
+                                .padding()
+                            
+                            VStack(alignment: .leading){
+                                Text("Read for 2 Hours")
+                                ProgressView(value: 5.0, total: 10.0)
+                                    .tint(Color.purple)
+                            }
+                            
+                            Text("14 Hours")
+                        }
                     }
                 }
-                
             }
            HStack{
                 Spacer()
-               NavigationLink{
-                   ContentView2()
-               }label: {
+             
                    VStack {
                        Image(systemName: "house.fill")
                            .resizable()
@@ -183,7 +202,7 @@ struct ContentView4: View {
                            .bold()
                            .foregroundColor(Color .black )
                    }
-               }
+               
                 
                 Spacer()
                 

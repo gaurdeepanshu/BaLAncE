@@ -26,6 +26,7 @@ struct ContentView3: View {
                     }.foregroundColor(.black)
                     Spacer()
                     Text("Exclusive workout")
+                    Image(systemName: "dumbbell.fill")
                         .font(.system(size: 20))
                     Spacer()
                     
