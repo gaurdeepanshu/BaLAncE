@@ -8,6 +8,28 @@
 import SwiftUI
 
 struct ContentView2: View {
+    @StateObject private var auth = AuthViewModel()
+    var body: some View {
+        Group {
+            if auth.isAuthenticated {
+                TabView {
+                    NavigationStack {
+                        HomeView()
+                    }
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
+                    }
+                }
+                .tint(.black)
+            } else {
+                AuthView(auth: auth)
+            }
+        }
+    }
+}
+
+struct HomeView: View {
     var body: some View{
         NavigationStack{
             Text("BALANCE")
