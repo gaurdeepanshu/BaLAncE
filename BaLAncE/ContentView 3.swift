@@ -60,7 +60,7 @@ struct ContentView3: View {
                             Circle()
                                 .foregroundStyle(Color.white)
                                 .frame(height: 150)
-                                .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.purple, lineWidth: 10))
+                                .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.orange, lineWidth: 10))
                                 .padding()
                             Text("15min")
                                 .font(.system(size: 30))
@@ -135,7 +135,7 @@ struct ContentView3: View {
                         VStack{
                             Text("Make as Complete")
                         }
-                    }.padding(EdgeInsets(top: -50, leading: 0, bottom: 0, trailing: 0))
+                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                  
                      
                 }

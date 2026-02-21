@@ -2,83 +2,83 @@
 import SwiftUI
 
 struct ContentView13: View {
-    @State private var email = ""
-    @State private var password = ""
+    @State private var Name: String = ""
+    @State private var Age: String = ""
+    @State private var Weight: String = ""
+    @State private var Height: String = ""
+    @State private var BMI: String = ""
+    @State private var Sex: String = ""
+    @State private var Email: String = ""
     var body: some View{
-      NavigationStack {
-        ZStack {
-            Image("gym")
-                .resizable()
-                .opacity(0.3)
-             VStack (spacing: 20){
-                Text("BaLAncE")
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-                Text("Forget Password")
-                 
-                    .foregroundColor(.orange)
-                 VStack(alignment: .leading, spacing: 8){
-                     Text("Enter Email / Phone")
-                         .foregroundColor(.gray)
-                     TextField("Email address", text: $email)
-                         .frame(height: 10)
-                         .padding()
-                         .background(Color.white)
-                         .cornerRadius(50)
-                     
-                     Text("Enter OTP")
-                         .foregroundColor(.gray)
-                     SecureField("Password", text: $password)
-                         .frame(height: 10)
-                         .padding()
-                         .background(Color.white)
-                         .cornerRadius(50)
-                     
-                     Text("Enter New Password")
-                         .foregroundColor(.gray)
-                     SecureField("Password", text: $password)
-                         .frame(height: 10)
-                         .padding()
-                         .background(Color.white)
-                         .cornerRadius(50)
-                 }.padding(.horizontal, 50)
-                 Button(action: {
-                    print("login tapped")
-                }
-                 )
-                 {
-                    Text("Sign In")
-                        .font(.footnote)
+        ScrollView{
+            VStack{
+                Circle()
+                    .foregroundColor(.blue)
+                    .frame(width: 80, height: 80)
+                    .overlay(Circle().stroke(Color.black, lineWidth: 5))
+                    .padding()
+                    .cornerRadius(50)
+                    .opacity(0.3)
+                HStack{
+                    Text("Update Picture")
                         .bold()
-                        .foregroundStyle(Color.white)
-                        .frame(maxWidth: 100)
-                        .padding()
-                        .background(Color.orange)
-                        .cornerRadius(25)
-                }.buttonStyle(PlainButtonStyle())
-                    .padding(.horizontal, 50)
-                    .padding(.top, 8)
-               HStack(spacing: 20){
-                    Image(systemName: "applelogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 32)
-                        .foregroundStyle(.primary)
-                    Image(systemName: "globe")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 32)
-                        .foregroundStyle(.primary)
-                    Image(systemName: "f.square.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 32)
-                        .foregroundStyle(.primary)
-               }
-            }
-        }.ignoresSafeArea()
-    }.toolbar(.hidden)
-         }
+                    Image(systemName: "camera.fill")
+                }
+                VStack{
+                    TextField("Name :", text: $Name)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                    
+                    TextField("Age :", text: $Age)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                    
+                    HStack{
+                        
+                        TextField("Weight :", text: $Weight)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal)
+                        
+                        TextField("Height :", text: $Height)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal)
+                        
+                        TextField("BMI :", text: $BMI)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal)
+                        
+                       }
+                    
+                    
+                    TextField("Sex :", text: $Sex)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                    
+                    TextField("Email :", text: $Email)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                    
+                     }
+                Spacer()
+
+                ZStack{
+                    Rectangle()
+                        .foregroundColor(.blue)
+                        .frame(height: 40)
+                        .frame(width: 120)
+                        .opacity(0.4)
+                    Text("Save")
+                    
+                }
+                
+                
+                
+                
+                
+          }
+            Spacer()
+        }
+    }
 }
 #Preview {
     ContentView13()

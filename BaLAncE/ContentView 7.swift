@@ -50,7 +50,7 @@ struct ContentView7: View {
                             Circle()
                                 .foregroundStyle(Color.white)
                                 .frame(height: 150)
-                                .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.purple, lineWidth: 10))
+                                .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.blue, lineWidth: 10))
                                 .padding()
                             Text("15min")
                                 .font(.system(size: 30))
