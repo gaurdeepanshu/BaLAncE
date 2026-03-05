@@ -21,8 +21,7 @@ struct ContentView4: View {
                         
                     Spacer()
                 }.padding()
-                
-                HStack(spacing: 20){
+               HStack(spacing: 20){
                     Text("Mon")
                     Text("Tue")
                     Text("Wed")
@@ -31,8 +30,7 @@ struct ContentView4: View {
                     Text("sat")
                     Text("Sun")
                 }
-               
-                HStack(spacing: 38){
+               HStack(spacing: 38){
                     Text("1")
                     Text("2")
                     Text("3")
@@ -46,20 +44,18 @@ struct ContentView4: View {
                         .padding(.leading, -170)
                 ZStack{
                     HStack{
-                        ProgressView(value: 5.0, total: 10.0)
+                        ProgressView(value: 6.0, total: 10.0)
                             .tint(Color.green)
-                            .scaleEffect(x: 1, y: 5, anchor: .center) // increases height
+                            .scaleEffect(x: 1, y: 5, anchor: .center) 
                        
                         Text("50%")
                     }.padding()
-                        
-                      Rectangle()
+                     Rectangle()
                         .foregroundColor(.blue)
                         .frame(height: 90)
                         .cornerRadius(20)
                         .opacity(0.2)
-                    
-                     }
+                    }
              }.padding(20)
             List{
                 NavigationLink{
@@ -75,7 +71,7 @@ struct ContentView4: View {
                             
                             VStack(alignment: .leading){
                                 Text("Exclusive workout")
-                                ProgressView(value: 5.0, total: 10.0)
+                                ProgressView(value: 7.0, total: 10.0)
                                     .tint(Color.orange)
                              }
                       
@@ -96,7 +92,7 @@ struct ContentView4: View {
                             
                             VStack(alignment: .leading){
                                 Text("walk for 30min's")
-                                ProgressView(value: 5.0, total: 10.0)
+                                ProgressView(value: 3.0, total: 10.0)
                                     .tint(Color.black)
                              }
                       
@@ -138,7 +134,7 @@ struct ContentView4: View {
                             
                             VStack(alignment: .leading){
                                 Text("Sleep by 11 PM")
-                                ProgressView(value: 10.0, total: 10.0)
+                                ProgressView(value: 9.0, total: 10.0)
                                     .tint(Color.yellow)
                             }
                             
@@ -180,7 +176,7 @@ struct ContentView4: View {
                             
                             VStack(alignment: .leading){
                                 Text("Read for 2 Hours")
-                                ProgressView(value: 5.0, total: 10.0)
+                                ProgressView(value: 8.0, total: 10.0)
                                     .tint(Color.purple)
                             }
                             
@@ -192,6 +188,9 @@ struct ContentView4: View {
            HStack{
                 Spacer()
              
+               NavigationLink{
+                   HomeView()
+               }label: {
                    VStack {
                        Image(systemName: "house.fill")
                            .resizable()
@@ -202,6 +201,7 @@ struct ContentView4: View {
                            .bold()
                            .foregroundColor(Color .black )
                    }
+               }
                
                 
                 Spacer()
@@ -218,11 +218,11 @@ struct ContentView4: View {
                 Spacer()
                 
                 VStack {
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: "gear")
                         .resizable()
                         .frame(width: 30 , height: 30)
                         .foregroundColor(Color .brown )
-                    Text("search")
+                    Text("setting")
                         .font(.system(size: 15))
                         .bold()
                 }

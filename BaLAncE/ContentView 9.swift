@@ -133,39 +133,39 @@ struct ContentView9: View {
        
         }
             
-            HStack{
-                 Spacer()
-                 VStack {
-                     Image(systemName: "house.fill")
-                         .resizable()
-                         .frame(width: 30 , height: 30)
-                         .foregroundColor(Color .black )
-                     Text("Home")
-                         .font(.system(size: 15))
-                         .bold()
-                 }
-                 Spacer()
-                VStack {
-                     Image(systemName: "heart.fill")
-                         .resizable()
-                         .frame(width: 30 , height: 30)
-                         .foregroundColor(Color .red )
-                     Text("status")
-                         .font(.system(size: 15))
-                         .bold()
-                 }
-                 Spacer()
-                 VStack {
-                     Image(systemName: "magnifyingglass")
-                         .resizable()
-                         .frame(width: 30 , height: 30)
-                         .foregroundColor(Color .brown )
-                     Text("search")
-                         .font(.system(size: 15))
-                         .bold()
-                 }
-                 Spacer()
-            }
+//            HStack{
+//                 Spacer()
+//                 VStack {
+//                     Image(systemName: "house.fill")
+//                         .resizable()
+//                         .frame(width: 30 , height: 30)
+//                         .foregroundColor(Color .black )
+//                     Text("Home")
+//                         .font(.system(size: 15))
+//                         .bold()
+//                 }
+//                 Spacer()
+//                VStack {
+//                     Image(systemName: "heart.fill")
+//                         .resizable()
+//                         .frame(width: 30 , height: 30)
+//                         .foregroundColor(Color .red )
+//                     Text("status")
+//                         .font(.system(size: 15))
+//                         .bold()
+//                 }
+//                 Spacer()
+//                 VStack {
+//                     Image(systemName: "magnifyingglass")
+//                         .resizable()
+//                         .frame(width: 30 , height: 30)
+//                         .foregroundColor(Color .brown )
+//                     Text("search")
+//                         .font(.system(size: 15))
+//                         .bold()
+//                 }
+//                 Spacer()
+//            }
         }.toolbar(.hidden)
     
         }

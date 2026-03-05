@@ -58,23 +58,34 @@ struct ContentView12: View {
                 }.buttonStyle(PlainButtonStyle())
                     .padding(.horizontal, 50)
                     .padding(.top, 8)
-               HStack(spacing: 20){
-                    Image(systemName: "applelogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 32)
-                        .foregroundStyle(.primary)
-                    Image(systemName: "globe")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 32)
-                        .foregroundStyle(.primary)
-                    Image(systemName: "f.square.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 32)
-                        .foregroundStyle(.primary)
-               }
+                 
+                 
+                 
+                 
+                 
+//               HStack(spacing: 20){
+//                    Image(systemName: "applelogo")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 22, height: 32)
+//                        .foregroundStyle(.primary)
+//                    Image(systemName: "globe")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 22, height: 32)
+//                        .foregroundStyle(.primary)
+//                    Image(systemName: "f.square.fill")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 22, height: 32)
+//                        .foregroundStyle(.primary)
+//               }
+                 
+                 
+                 
+                 
+                 
+                 
             }
         }.ignoresSafeArea()
     }.toolbar(.hidden)

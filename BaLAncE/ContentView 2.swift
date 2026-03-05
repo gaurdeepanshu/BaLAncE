@@ -10,22 +10,31 @@ import SwiftUI
 struct ContentView2: View {
     @StateObject private var auth = AuthViewModel()
     var body: some View {
-        Group {
-            if auth.isAuthenticated {
-                TabView {
-                    NavigationStack {
-                        HomeView()
-                    }
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
+        Group{
+            if auth.isAuthenticated{
+                NavigationStack{
+                    HomeView()
                 }
-                .tint(.black)
-            } else {
+            } else{
                 AuthView(auth: auth)
             }
         }
+//        Group {
+//            if auth.isAuthenticated {
+//                TabView {
+//                    NavigationStack {
+//                        HomeView()
+//                    }
+//                    .tabItem {
+//                        Image(systemName: "house")
+//                        Text("Home")
+//                    }
+//                }
+//                .tint(.black)
+//            } else {
+//                AuthView(auth: auth)
+//            }
+//        }
     }
 }
 
@@ -42,13 +51,13 @@ struct HomeView: View {
                         .font(.system(size: 20))
                         .bold()
                     Spacer()
-                   // NavigationLink{
-                  //      ContentView()
-//                    } label: {
-//                        Image(systemName: "person.fill")
-//                            .resizable()
-//                            .frame(width: 20, height: 20)
-//                    }.foregroundColor(.black)
+                    NavigationLink{
+                        ContentView()
+                    } label: {
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }.foregroundColor(.black)
               }
                 .padding()
                 VStack{
@@ -237,6 +246,9 @@ struct HomeView: View {
                 }
                 Spacer()
              
+               NavigationLink{
+                   ContentView4()
+               }label: {
                    VStack {
                         Image(systemName: "heart.fill")
                             .resizable()
@@ -246,14 +258,15 @@ struct HomeView: View {
                             .font(.system(size: 15))
                             .bold()
                     }
+               }
                
                 Spacer()
                 VStack {
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: "gear")
                         .resizable()
                         .frame(width: 30 , height: 30)
                         .foregroundColor(Color .brown )
-                    Text("search")
+                    Text("setting")
                         .font(.system(size: 15))
                         .bold()
                 }

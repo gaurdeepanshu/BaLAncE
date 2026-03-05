@@ -4,17 +4,17 @@
 //
 //  Created by applelab02 on 2/21/26.
 //
-
 import SwiftUI
 import Combine
+import FirebaseAuth
+import FirebaseFirestore
+import Firebase
 
 final class AuthViewModel: ObservableObject {
     @Published var isAuthenticated: Bool = false
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
-
     private var users: [String: String] = [:] // email -> password
-
     func login(email: String, password: String) {
         errorMessage = nil
         isLoading = true
@@ -26,22 +26,18 @@ final class AuthViewModel: ObservableObject {
                 self.errorMessage = "Please enter email and password."
                 return
             }
-
             guard let savedPassword = self.users[email] else {
                 self.errorMessage = "No account found for this email. Please sign up."
                 return
             }
-
             guard password == savedPassword else {
                 self.errorMessage = "Password is incorrect."
                 return
             }
-
             self.errorMessage = nil
             self.isAuthenticated = true
         }
     }
-
     func signup(email: String, password: String, username: String) {
         errorMessage = nil
         isLoading = true
@@ -52,24 +48,20 @@ final class AuthViewModel: ObservableObject {
                 self.errorMessage = "Please fill all fields."
                 return
             }
-
             // Add or update the user in-memory
             self.users[email] = password
 
             self.errorMessage = nil
-            self.isAuthenticated = false
+            self.isAuthenticated = true
         }
     }
-
     func logout() {
         isAuthenticated = false
     }
 }
-
 struct AuthView: View {
     @ObservedObject var auth: AuthViewModel
     @State private var selection: Int = 0
-
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
@@ -82,10 +74,8 @@ struct AuthView: View {
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
-
             if selection == 0 {
                 LoginView(auth: auth)
-                
             }
             else{
                 SignupView(auth: auth)
@@ -97,7 +87,6 @@ struct AuthView: View {
                     .foregroundStyle(.red)
                     .padding(.horizontal)
             }
-
             if auth.isLoading {
                 ProgressView().padding(.top, 8)
             }
@@ -107,7 +96,6 @@ struct AuthView: View {
         .padding()
     }
 }
-
 struct LoginView: View {
     @ObservedObject var auth: AuthViewModel
     @State private var email: String = ""
@@ -134,13 +122,11 @@ struct LoginView: View {
         .padding(.horizontal)
     }
 }
-
 struct SignupView: View {
     @ObservedObject var auth: AuthViewModel
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
-
     var body: some View {
         VStack(spacing: 12) {
             TextField("Username", text: $username)
@@ -164,4 +150,7 @@ struct SignupView: View {
         }
         .padding(.horizontal)
     }
+}
+#Preview{
+    AuthView(auth: AuthViewModel())
 }

@@ -4,15 +4,21 @@
 //
 //  Created by applelab02 on 2/10/26.
 //
-
+ 
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.dismiss) private var dismiss
     var body: some View{
         NavigationStack{
             HStack {
              
+                   Button(action: {
+                    dismiss()
+                }) {
                     Image(systemName: "chevron.left")
+                        .font(.system(size: 25))
+                }.foregroundStyle(.primary)
               
                 Spacer()
                 Text("BALANCE")
@@ -213,42 +219,42 @@ struct ContentView: View {
                      
              }
             
-            HStack{
-                Spacer()
-                VStack {
-                    Image(systemName: "house.fill")
-                        .resizable()
-                        .frame(width: 30 , height: 30)
-                        .foregroundColor(Color .black )
-                    Text("Home")
-                        .font(.system(size: 15))
-                        .bold()
-                }
-                
-                Spacer()
-                
-                VStack {
-                    Image(systemName: "heart.fill")
-                        .resizable()
-                        .frame(width: 30 , height: 30)
-                        .foregroundColor(Color .red )
-                    Text("status")
-                        .font(.system(size: 15))
-                        .bold()
-                }
-                Spacer()
-                
-                VStack {
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .frame(width: 30 , height: 30)
-                        .foregroundColor(Color .brown )
-                    Text("search")
-                        .font(.system(size: 15))
-                        .bold()
-                }
-                Spacer()
-           }
+//            HStack{
+//                Spacer()
+//                VStack {
+//                    Image(systemName: "house.fill")
+//                        .resizable()
+//                        .frame(width: 30 , height: 30)
+//                        .foregroundColor(Color .black )
+//                    Text("Home")
+//                        .font(.system(size: 15))
+//                        .bold()
+//                }
+//                
+//                Spacer()
+//                
+//                VStack {
+//                    Image(systemName: "heart.fill")
+//                        .resizable()
+//                        .frame(width: 30 , height: 30)
+//                        .foregroundColor(Color .red )
+//                    Text("status")
+//                        .font(.system(size: 15))
+//                        .bold()
+//                }
+//                Spacer()
+//                
+//                VStack {
+//                    Image(systemName: "magnifyingglass")
+//                        .resizable()
+//                        .frame(width: 30 , height: 30)
+//                        .foregroundColor(Color .brown )
+//                    Text("search")
+//                        .font(.system(size: 15))
+//                        .bold()
+//                }
+//                Spacer()
+//           }
         }.toolbar(.hidden)
     }
 }

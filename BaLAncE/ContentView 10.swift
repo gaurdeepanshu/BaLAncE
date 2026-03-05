@@ -17,8 +17,6 @@ struct ContentView10: View {
                 Text("Sign In")
                     .font(.title)
                     .foregroundColor(.orange)
-             
-
                 VStack(alignment: .leading, spacing: 8){
                     Text("Email address")
                         .foregroundColor(.gray)
