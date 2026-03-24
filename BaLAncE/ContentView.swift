@@ -25,6 +25,7 @@ struct ContentView: View {
                     .font(.system(size: 25))
                     .bold()
                 Spacer()
+                Text("Edit")
             }.padding()
             VStack(alignment: .leading){
               HStack(alignment: .top){
@@ -37,6 +38,8 @@ struct ContentView: View {
                             .bold()
 
                         Text("User@email.com")
+                        
+                       
                    }
                     Spacer()
                 }

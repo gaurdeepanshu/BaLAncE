@@ -17,7 +17,7 @@ struct BaLAncEApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView2()
                 .environmentObject(auth)
         }
     }

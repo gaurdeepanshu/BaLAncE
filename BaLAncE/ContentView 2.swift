@@ -85,24 +85,26 @@ struct HomeView: View {
                    }.padding()
              }
             
-                 VStack{
-                     HStack{
-                         Image(systemName: "dumbbell.fill")
-                             .resizable()
-                             .frame(width: 20 , height: 10)
-                             .foregroundColor(Color .orange )
-                             .padding()
-                         
-                         VStack(alignment: .leading){
-                             Text("Exclusive workout")
-                             ProgressView(value: 5.0, total: 10.0)
-                                 .tint(Color.orange)
-                          }
-                   
-                      Text("30mins")
-                     }
-                 }
-           
+                NavigationLink(destination: ContentView14()){
+                    VStack{
+                        HStack{
+                            Image(systemName: "dumbbell.fill")
+                                .resizable()
+                                .frame(width: 20 , height: 10)
+                                .foregroundColor(Color .orange )
+                                .padding()
+                            
+                            VStack(alignment: .leading){
+                                Text("Exclusive workout")
+                                ProgressView(value: 5.0, total: 10.0)
+                                    .tint(Color.orange)
+                             }
+                      
+                         Text("30mins")
+                        }
+                    }
+              
+             }
              VStack{
                  HStack{
                      Image(systemName: "figure.walk")
@@ -261,16 +263,20 @@ struct HomeView: View {
                }
                
                 Spacer()
-                VStack {
-                    Image(systemName: "gear")
-                        .resizable()
-                        .frame(width: 30 , height: 30)
-                        .foregroundColor(Color .brown )
-                    Text("setting")
-                        .font(.system(size: 15))
-                        .bold()
-                }
-                Spacer()
+               NavigationLink{
+                     Settingview()
+                 }label: {
+                     VStack {
+                         Image(systemName: "gearshape.fill")
+                             .resizable()
+                             .frame(width: 30 , height: 30)
+                             .foregroundColor(Color .brown )
+                         Text("Settings")
+                             .font(.system(size: 15))
+                             .foregroundColor(Color .black)
+                     }
+                 }
+                 Spacer()
            }
        }.toolbar(.hidden)
     }

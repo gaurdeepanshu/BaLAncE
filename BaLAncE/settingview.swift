@@ -7,12 +7,7 @@
 import SwiftUI
 struct Settingview: View {
     var body: some View {
-        HStack{
-            Image(systemName: "chevron.left")
-              Spacer()
-        }
-        
-        .padding()
+       
         
         NavigationStack{
             List{

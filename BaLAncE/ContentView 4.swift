@@ -217,16 +217,20 @@ struct ContentView4: View {
                 }
                 Spacer()
                 
-                VStack {
-                    Image(systemName: "gear")
-                        .resizable()
-                        .frame(width: 30 , height: 30)
-                        .foregroundColor(Color .brown )
-                    Text("setting")
-                        .font(.system(size: 15))
-                        .bold()
-                }
-                Spacer()
+             NavigationLink{
+                   Settingview()
+               }label: {
+                   VStack {
+                       Image(systemName: "gearshape.fill")
+                           .resizable()
+                           .frame(width: 30 , height: 30)
+                           .foregroundColor(Color .brown )
+                       Text("Settings")
+                           .font(.system(size: 15))
+                           .foregroundColor(Color .black)
+                   }
+               }
+               Spacer()
            }
         }.toolbar(.hidden)
     }
