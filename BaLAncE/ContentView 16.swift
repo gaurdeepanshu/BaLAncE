@@ -1,12 +1,6 @@
-
-
 import SwiftUI
 
-struct Habit: Identifiable {
-    let id = UUID()
-    var name: String
-    var icon: String
-}
+// Uses shared Habit model from HabitsViewModel.swift
 
 struct ContentView16: View {
     
@@ -140,6 +134,3 @@ struct HabitRow: View {
     ContentView16()
 }
      
- 
-
-

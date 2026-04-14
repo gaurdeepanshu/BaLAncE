@@ -1,62 +1,104 @@
-//
-//  ContentView.swift
-//  BaLAncE
-//
-//  Created by applelab02 on 2/10/26.
-//
+
 
 import SwiftUI
 
 struct ContentView4: View {
+    
+    @State private var selectedDate = Date()
+    @State private var currentMonth = Date()
+    
     var body: some View{
         NavigationStack{
             VStack(spacing: 10){
+                
+                // Header
                 HStack{
-                    
                     Spacer()
                     Text("Status")
                     Image (systemName: "heart.fill")
                         .foregroundStyle(Color.red)
                         .bold()
-                        
                     Spacer()
                 }.padding()
-               HStack(spacing: 20){
-                    Text("Mon")
-                    Text("Tue")
-                    Text("Wed")
-                    Text("Thu")
-                    Text("Fri")
-                    Text("sat")
-                    Text("Sun")
+                
+                // 🔥 Month Selector (NEW)
+                HStack {
+                    
+                    Button {
+                        changeMonth(by: -1)
+                    } label: {
+                        Image(systemName: "chevron.left")
+                    }
+                    
+                    Spacer()
+                    
+                    Text(monthYearString(from: currentMonth))
+                        .font(.headline)
+                        .bold()
+                    
+                    Spacer()
+                    
+                    Button {
+                        changeMonth(by: 1)
+                    } label: {
+                        Image(systemName: "chevron.right")
+                    }
                 }
-               HStack(spacing: 38){
-                    Text("1")
-                    Text("2")
-                    Text("3")
-                    Text("4")
-                    Text("5")
-                    Text("6")
-                    Text("7")
+                .padding(.horizontal)
+                
+                // 🔥 Scrollable Dynamic Calendar (UPDATED)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 15){
+                        
+                        ForEach(generateDates(), id: \.self){ date in
+                            
+                            VStack(spacing: 5){
+                                
+                                Text(getDay(from: date))
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                
+                                Text(getDate(from: date))
+                                    .font(.headline)
+                                    .frame(width: 35, height: 35)
+                                    .background(
+                                        isSameDay(date1: date, date2: selectedDate) ? Color.blue : Color.clear
+                                    )
+                                    .foregroundColor(
+                                        isSameDay(date1: date, date2: selectedDate) ? .white : .black
+                                    )
+                                    .clipShape(Circle())
+                            }
+                            .onTapGesture {
+                                selectedDate = date
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
                 }
                 
-                    Text("weekly progress")
-                        .padding(.leading, -170)
+                // SAME as before 👇
+                Text("weekly progress")
+                    .padding(.leading, -170)
+                
                 ZStack{
                     HStack{
                         ProgressView(value: 6.0, total: 10.0)
                             .tint(Color.green)
-                            .scaleEffect(x: 1, y: 5, anchor: .center) 
-                       
+                            .scaleEffect(x: 1, y: 5, anchor: .center)
+                        
                         Text("50%")
                     }.padding()
-                     Rectangle()
+                    
+                    Rectangle()
                         .foregroundColor(.blue)
                         .frame(height: 90)
                         .cornerRadius(20)
                         .opacity(0.2)
-                    }
-             }.padding(20)
+                }
+            }.padding(20)
+            
+            // 🔥 YOUR ORIGINAL LIST (UNCHANGED)
             List{
                 NavigationLink{
                     ContentView3()
@@ -73,12 +115,13 @@ struct ContentView4: View {
                                 Text("Exclusive workout")
                                 ProgressView(value: 7.0, total: 10.0)
                                     .tint(Color.orange)
-                             }
-                      
-                         Text("210 mins")
+                            }
+                            
+                            Text("210 mins")
                         }
                     }
                 }
+                
                 NavigationLink{
                     ContentView5()
                 }label: {
@@ -94,12 +137,13 @@ struct ContentView4: View {
                                 Text("walk for 30min's")
                                 ProgressView(value: 3.0, total: 10.0)
                                     .tint(Color.black)
-                             }
-                      
-                         Text("210 mins")
+                            }
+                            
+                            Text("210 mins")
                         }
                     }
                 }
+                
                 NavigationLink{
                     ContentView7()
                 }label: {
@@ -121,6 +165,7 @@ struct ContentView4: View {
                         }
                     }
                 }
+                
                 NavigationLink{
                     ContentView8()
                 }label: {
@@ -142,6 +187,7 @@ struct ContentView4: View {
                         }
                     }
                 }
+                
                 NavigationLink{
                     ContentView6()
                 }label: {
@@ -163,6 +209,7 @@ struct ContentView4: View {
                         }
                     }
                 }
+                
                 NavigationLink{
                     ContentView9()
                 }label: {
@@ -184,25 +231,69 @@ struct ContentView4: View {
                         }
                     }
                 }
+                NavigationLink{
+                    ContentView18()
+                }label: {
+                    VStack{
+                        HStack{
+                            Image(systemName: "flame.fill")
+                                .resizable()
+                                .frame(width: 20 , height: 20)
+                                .foregroundColor(Color .red )
+                                .padding()
+                            
+                            VStack(alignment: .leading){
+                                Text("Burn / Gain calorie")
+                                ProgressView(value: 8.0, total: 10.0)
+                                    .tint(Color.red)
+                            }
+                            
+                            Text("233")
+                            Image(systemName: "flame")
+                            
+                        }
+                    }
+                }
+                
+                NavigationLink{
+                    ContentView19()
+                }label: {
+                    VStack{
+                        HStack{
+                            Image(systemName: "waterbottle.fill")
+                                .resizable()
+                                .frame(width: 20 , height: 20)
+                                .foregroundColor(Color .pink)
+                                .padding()
+                            
+                            VStack(alignment: .leading){
+                                Text(" intake protein")
+                                ProgressView(value: 8.0, total: 10.0)
+                                    .tint(Color.pink)
+                            }
+                            
+                            Text("233")
+                            Image(systemName: "waterbottle")
+                            
+                        }
+                    }
+                }
             }
-           HStack{
+            
+            // 🔥 Bottom Bar SAME
+            HStack{
                 Spacer()
-             
-               NavigationLink{
-                   HomeView()
-               }label: {
-                   VStack {
-                       Image(systemName: "house.fill")
-                           .resizable()
-                           .frame(width: 30 , height: 30)
-                           .foregroundColor(Color .black )
-                       Text("Home")
-                           .font(.system(size: 15))
-                           .bold()
-                           .foregroundColor(Color .black )
-                   }
-               }
-               
+                
+                NavigationLink{
+                    HomeView()
+                }label: {
+                    VStack {
+                        Image(systemName: "house.fill")
+                            .resizable()
+                            .frame(width: 30 , height: 30)
+                        Text("Home")
+                    }
+                }
                 
                 Spacer()
                 
@@ -210,31 +301,71 @@ struct ContentView4: View {
                     Image(systemName: "heart.fill")
                         .resizable()
                         .frame(width: 30 , height: 30)
-                        .foregroundColor(Color .red )
+                        .foregroundColor(.red)
                     Text("status")
-                        .font(.system(size: 15))
-                        .bold()
                 }
+                
                 Spacer()
                 
-             NavigationLink{
-                   Settingview()
-               }label: {
-                   VStack {
-                       Image(systemName: "gearshape.fill")
-                           .resizable()
-                           .frame(width: 30 , height: 30)
-                           .foregroundColor(Color .brown )
-                       Text("Settings")
-                           .font(.system(size: 15))
-                           .foregroundColor(Color .black)
-                   }
-               }
-               Spacer()
-           }
+                NavigationLink{
+                    Settingview()
+                }label: {
+                    VStack {
+                        Image(systemName: "gearshape.fill")
+                            .resizable()
+                            .frame(width: 30 , height: 30)
+                        Text("Settings")
+                    }
+                }
+                
+                Spacer()
+            }
         }.toolbar(.hidden)
     }
+    
+    // MARK: - Calendar Logic
+    
+    func generateDates() -> [Date] {
+        let calendar = Calendar.current
+        
+        guard let range = calendar.range(of: .day, in: .month, for: currentMonth),
+              let firstDay = calendar.date(from: calendar.dateComponents([.year, .month], from: currentMonth))
+        else { return [] }
+        
+        return range.compactMap { day -> Date? in
+            calendar.date(byAdding: .day, value: day - 1, to: firstDay)
+        }
+    }
+    
+    func changeMonth(by value: Int) {
+        if let newMonth = Calendar.current.date(byAdding: .month, value: value, to: currentMonth) {
+            currentMonth = newMonth
+        }
+    }
+    
+    func monthYearString(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM yyyy"
+        return formatter.string(from: date)
+    }
+    
+    func getDay(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E"
+        return formatter.string(from: date)
+    }
+    
+    func getDate(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d"
+        return formatter.string(from: date)
+    }
+    
+    func isSameDay(date1: Date, date2: Date) -> Bool {
+        Calendar.current.isDate(date1, inSameDayAs: date2)
+    }
 }
+
 #Preview {
     ContentView4()
 }

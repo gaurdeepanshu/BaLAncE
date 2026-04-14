@@ -1,9 +1,3 @@
-//
-//  settingview.swift
-//  BaLAncE
-//
-//  Created by applelab02 on 2/27/26.
-//
 import SwiftUI
 struct Settingview: View {
     var body: some View {
@@ -12,38 +6,43 @@ struct Settingview: View {
         NavigationStack{
             List{
                 Section("Account") {
-                   Text("Edit profile")
+                   NavigationLink{
+                        ContentView13()
+                   }label: {
+                       Text("Edit profile")
+                   }
                 }
                 Section("other") {
-                    Text("Notification")
-                    Text("Privacy Policy")
-                    Text("About Us")
-                    Text("Follow Us")
+                    NavigationLink{
+                        notificationview()
+                    }label: {
+                        Text("Notification")
+                    }
+                   NavigationLink{
+                        termsview()
+                       
+                   }label: {
+                       Text("Privacy Policy")
+                   }
+               
                 //   Text("")
                 //   Text("")
                 //   Text("")
                 //   Text("")
                 //   Text("")
-                    Text("Switch account")
-                      .foregroundColor(.blue)
-                    Text("Log out")
-                      .foregroundColor(.red)
+               
+                    
+                    NavigationLink{
+                        ContentView2()
+                    } label: {
+                        Text("Log out")
+                          .foregroundColor(.red)
+                    }
                     
                     
                   
                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+
                     
                 }
             }.navigationTitle(Text("Setting"))
@@ -53,3 +52,6 @@ struct Settingview: View {
 #Preview {
     Settingview()
 }
+
+
+

@@ -21,22 +21,9 @@
 		9F9AE5242F3B23B800D56A3F /* BaLAncE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaLAncE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9FC3C53B2F5556A4002E55BF /* Exceptions for "BaLAncE" folder in "BaLAncE" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Untitled.swift,
-			);
-			target = 9F9AE5232F3B23B800D56A3F /* BaLAncE */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9F9AE5262F3B23B800D56A3F /* BaLAncE */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				9FC3C53B2F5556A4002E55BF /* Exceptions for "BaLAncE" folder in "BaLAncE" target */,
-			);
 			path = BaLAncE;
 			sourceTree = "<group>";
 		};

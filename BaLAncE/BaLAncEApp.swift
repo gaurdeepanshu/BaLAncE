@@ -10,6 +10,8 @@ import FirebaseCore
 @main
 struct BaLAncEApp: App {
     @StateObject var auth = AuthViewModel()
+    @StateObject var profile = UserProfile()
+    @StateObject var habits = HabitsViewModel()
     
     init() {
         FirebaseApp.configure()
@@ -19,6 +21,10 @@ struct BaLAncEApp: App {
         WindowGroup {
             ContentView2()
                 .environmentObject(auth)
+                .environmentObject(profile)
+                .environmentObject(habits)
         }
     }
 }
+
+

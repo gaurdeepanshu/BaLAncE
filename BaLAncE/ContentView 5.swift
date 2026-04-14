@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ContentView5: View {
     var body: some View{
-        
       NavigationStack{
-            
           VStack{
               HStack{
                   NavigationLink{
@@ -20,24 +18,19 @@ struct ContentView5: View {
                       Image(systemName: "chevron.left")
                           .foregroundColor(.black)
                   }
-              
                   Spacer()
                   Text("Walk")
                   Image(systemName: "figure.walk")
                       .font(.system(size: 20))
                   Spacer()
-                  
               }  .padding()
               ScrollView(.vertical, showsIndicators: false){
-                  
-                  
                   ZStack{
                       Rectangle()
                           .foregroundStyle(Color.blue)
                           .frame(height: 40)
                           .cornerRadius(20)
                           .opacity(0.3)
-                      
                       HStack{
                           Image(systemName: "checkmark.circle.fill")
                               .resizable()
@@ -47,11 +40,8 @@ struct ContentView5: View {
                           Spacer()
                           Text("50%")
                               .padding()
-                          
                       }
-                      
                   }
-                  
                   VStack{
                       ZStack {
                           Circle()
@@ -61,8 +51,6 @@ struct ContentView5: View {
                               .padding()
                           Text("15min")
                               .font(.system(size: 30))
-                          
-                          
                       }
                   }
                   Text("YOU'RE HALF WAY THERE !")
@@ -81,14 +69,8 @@ struct ContentView5: View {
                                   .frame(width: 1, height: 19)
                               Spacer()
                               Image(systemName: "plus")
-                              
                               Text("Add TIME")
-                              
                               Spacer()
-                              
-                              
-                              
-                              
                           }.padding()
                       }
                   }
@@ -102,7 +84,6 @@ struct ContentView5: View {
                               .resizable()
                               .frame(width: 20, height: 5)
                       }.padding()
-                      
                       VStack{
                           HStack{
                               ForEach(weekDays, id: \.self) { index in
@@ -112,17 +93,12 @@ struct ContentView5: View {
                                       ProgressView(value: 5.0, total: 10.0)
                                           .rotationEffect(.degrees(-90))
                                           .scaleEffect(x: 8, y: 1, anchor: .center)
-                                          
                                   }
-                                  
                                   .frame(height: 200)
                                   .clipped()
                               }
-                              
-                              
                           }
                        }
-                   
                   }
                   ZStack{
                       Rectangle()
@@ -133,13 +109,8 @@ struct ContentView5: View {
                           Text("Make as Complete")
                       }
                   }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-               
-                   
               }
-          
-     
       }
-//          
 //          HStack{
 //               Spacer()
 //               VStack {
@@ -173,14 +144,7 @@ struct ContentView5: View {
 //               }
 //               Spacer()
 //          }
-          
       }.toolbar(.hidden)
-        
-        
-        
-        
-        
-       
     }
 }
 #Preview {

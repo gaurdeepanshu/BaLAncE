@@ -8,11 +8,12 @@
 import SwiftUI
 struct notificationview: View {
     var body: some View {
-        HStack{
-            Image(systemName: "chevron.left")
-              Spacer()
-        }
-        .padding()
+    NavigationStack {
+//        HStack{
+//            Image(systemName: "chevron.left")
+//              Spacer()
+//        }
+     //   .padding()
         VStack{
             Text("Notification")
                 .font(.largeTitle)
@@ -31,6 +32,7 @@ struct notificationview: View {
             Spacer()
         }
      
+    }/*.toolbar(.hidden)*/
         
         
         

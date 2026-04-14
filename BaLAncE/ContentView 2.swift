@@ -1,40 +1,44 @@
-//
-//  ContentView.swift
-//  BaLAncE
-//
-//  Created by applelab02 on 2/10/26.
-//
-
 import SwiftUI
 
 struct ContentView2: View {
+    @AppStorage("firstUseDate") private var firstUseDate: Double = 0
+    @AppStorage("hasShown60DayCongrats") private var hasShown60DayCongrats: Bool = false
+    @State private var showCongratsAlert: Bool = false
     @StateObject private var auth = AuthViewModel()
     var body: some View {
-        Group{
-            if auth.isAuthenticated{
-                NavigationStack{
-                    HomeView()
-                }
-            } else{
-                AuthView(auth: auth)
-            }
-        }
-//        Group {
-//            if auth.isAuthenticated {
-//                TabView {
-//                    NavigationStack {
-//                        HomeView()
-//                    }
-//                    .tabItem {
-//                        Image(systemName: "house")
-//                        Text("Home")
-//                    }
-//                }
-//                .tint(.black)
-//            } else {
-//                AuthView(auth: auth)
-//            }
-//        }
+      NavigationStack{
+          Group{
+              if auth.isAuthenticated{
+                  NavigationStack{
+                      HomeView()
+                  }
+              } else{
+                  AuthView(auth: auth)
+              }
+          }
+      }
+      .onAppear {
+          // Initialize first use date if not set
+          if firstUseDate == 0 {
+              firstUseDate = Date().timeIntervalSince1970
+          }
+          // Calculate days since first use
+          let daysSinceFirstUse = Int((Date().timeIntervalSince1970 - firstUseDate) / (60 * 60 * 24))
+          // If 60 days or more and we haven't shown the alert yet, trigger it
+          if daysSinceFirstUse >= 60 && !hasShown60DayCongrats {
+              showCongratsAlert = true
+          }
+      }
+      .alert("Congratulations!", isPresented: $showCongratsAlert) {
+          Button("Awesome!") {
+              // Mark as shown so we don't show it again
+              hasShown60DayCongrats = true
+          }
+      } message: {
+          Text("You've been with us for 60 days. You will get a surprise gift from us! 🎉")
+      }
+      .toolbar(.hidden)
+
     }
 }
 
@@ -283,4 +287,5 @@ struct HomeView: View {
 }
 #Preview {
     ContentView2()
+        .environmentObject(UserProfile())
 }
