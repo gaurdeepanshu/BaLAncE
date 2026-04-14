@@ -245,10 +245,11 @@ struct HomeView: View {
                     Image(systemName: "house.fill")
                         .resizable()
                         .frame(width: 30 , height: 30)
-                        .foregroundColor(Color .black )
+                        .foregroundColor(Color .green)
                     Text("Home")
                         .font(.system(size: 15))
                         .bold()
+                        .foregroundColor(Color .green)
                 }
                 Spacer()
              
@@ -263,6 +264,7 @@ struct HomeView: View {
                         Text("status")
                             .font(.system(size: 15))
                             .bold()
+                            .foregroundColor(Color .red )
                     }
                }
                
@@ -277,7 +279,7 @@ struct HomeView: View {
                              .foregroundColor(Color .brown )
                          Text("Settings")
                              .font(.system(size: 15))
-                             .foregroundColor(Color .black)
+                             .foregroundColor(Color .brown)
                      }
                  }
                  Spacer()

@@ -291,7 +291,9 @@ struct ContentView4: View {
                         Image(systemName: "house.fill")
                             .resizable()
                             .frame(width: 30 , height: 30)
+                            .foregroundColor(.green)
                         Text("Home")
+                            .foregroundColor(.green)
                     }
                 }
                 
@@ -303,6 +305,7 @@ struct ContentView4: View {
                         .frame(width: 30 , height: 30)
                         .foregroundColor(.red)
                     Text("status")
+                        .foregroundColor(.red)
                 }
                 
                 Spacer()
@@ -314,7 +317,9 @@ struct ContentView4: View {
                         Image(systemName: "gearshape.fill")
                             .resizable()
                             .frame(width: 30 , height: 30)
+                            .foregroundColor(.brown)
                         Text("Settings")
+                            .foregroundColor(.brown)
                     }
                 }
                 
